@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "SF Mono Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF Mono Regular"),
+    url("./assets/fonts/SFMonoRegular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF Mono Light";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF Mono Light"),
+    url("./assets/fonts/SFMonoLight.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF Mono Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF Mono Medium"),
+    url("./assets/fonts/SFMonoMedium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF Mono Semibold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF Mono Semibold"),
+    url("./assets/fonts/SFMonoSemibold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF Mono Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF Mono Bold"),
+    url("./assets/fonts/SFMonoBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF Mono Heavy";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF Mono Heavy"),
+    url("./assets/fonts/SFMonoHeavy.woff") format("woff");
+}

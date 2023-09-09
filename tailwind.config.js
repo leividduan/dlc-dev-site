@@ -175,7 +175,15 @@ export default {
           800: '#E8590C',
           900: '#D9480F',
         },
-      }
+      },
+      fontFamily: {
+        'body': ['"SF Mono Regular"'],
+        'bold': ['"SF Mono Bold"'],
+      },
+      letterSpacing: {
+        tighter: '-0.5px',
+        tightest: '-1px',
+      },
     },
   },
   plugins: [],
