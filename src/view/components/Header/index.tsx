@@ -1,20 +1,21 @@
 import { Link, NavLink } from 'react-router-dom';
 import { cn } from '../../../app/utils/cn';
-import { menuItems } from './menuItems';
 import { HamburguerMenu } from './components/HamburguerMenu';
 import { useHeaderController } from './useHeaderController';
 
+// import me from '../../../assets/images/me.png';
+
 export function Header() {
-  const { isHamburguerMenuOpen, toggleHamburguerMenu } = useHeaderController();
+  const { isHamburguerMenuOpen, toggleHamburguerMenu, menuItems } = useHeaderController();
 
   return (
     <>
       <nav className="bg-gray-900 w-full z-20 top-0 left-0 border-b border-gray-600 sticky">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link to="/" className="flex items-center">
-            <div className="bg-gray-100 rounded-full w-10 h-10 flex items-center justify-center border-2 border-black">
-              <span className="text-sm tracking-tighter text-black font-medium">DLC</span>
-            </div>
+            {/* <div className="bg-gray-100 rounded-full w-10 h-10 flex items-center justify-center border-2">
+            </div> */}
+            <span className="ml-3 tracking-tighter" >Deivid Luan Cardoso</span>
           </Link>
           <HamburguerMenu
             isOpen={isHamburguerMenuOpen}
