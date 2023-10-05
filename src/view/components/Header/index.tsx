@@ -22,15 +22,26 @@ export function Header() {
             onIsOpenClick={toggleHamburguerMenu}
           />
           <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
-            <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0  bg-gray-800 md:bg-gray-900 border-gray-700">
+            <ul className="flex flex-col items-center p-4 md:p-0 mt-4 font-medium border rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0  bg-gray-800 md:bg-gray-900 border-gray-700">
               {menuItems.map((menuItem) => (
                 <li key={menuItem.name}>
-                  <NavLink
-                    to={menuItem.to}
-                    className={({ isActive }) => (cn('text-sm tracking-tighter block py-2 pl-3 pr-4 rounded md:bg-transparent md:p-0 text-gray-600 hover:text-gray-400 transition-colors', isActive && 'text-white'))}
-                  >
-                    {menuItem.name}
-                  </NavLink>
+                  {menuItem.download
+                    ?
+                    <a
+                      href={menuItem.to}
+                      download={menuItem.download}
+                      className={(cn('text-sm tracking-tighter block py-2 pl-3 pr-4 rounded bg-transparent md:p-0 text-gray-600 hover:text-gray-400 transition-colors', menuItem.class ))}
+                    >
+                      {menuItem.name}
+                    </a>
+                    :
+                    <NavLink
+                      to={menuItem.to}
+                      className={({ isActive }) => (cn('text-sm tracking-tighter block py-2 pl-3 pr-4 rounded bg-transparent md:p-0 text-gray-600 hover:text-gray-400 transition-colors', isActive && 'text-white', menuItem.class ))}
+                    >
+                      {menuItem.name}
+                    </NavLink>
+                  }
                 </li>
               ))}
             </ul>
@@ -46,13 +57,23 @@ export function Header() {
             <ul className="flex flex-col items-center justify-between min-h-[250px]">
               {menuItems.map((menuItem) => (
                 <li key={menuItem.name}>
-                  <NavLink
-                    to={menuItem.to}
-                    className={({ isActive }) => (cn('text-sm tracking-tighter block py-2 pl-3 pr-4 rounded md:bg-transparent md:p-0 text-gray-600 hover:text-gray-400 transition-colors', isActive && 'text-white'))}
-                    onClick={toggleHamburguerMenu}
-                  >
-                    {menuItem.name}
-                  </NavLink>
+                  {menuItem.download
+                    ?
+                    <a
+                      href={menuItem.to}
+                      download={menuItem.download}
+                      className={(cn('text-sm tracking-tighter block py-2 pl-3 pr-4 rounded bg-transparent md:p-0 text-gray-600 hover:text-gray-400 transition-colors', menuItem.class ))}
+                    >
+                      {menuItem.name}
+                    </a>
+                    :
+                    <NavLink
+                      to={menuItem.to}
+                      className={({ isActive }) => (cn('text-sm tracking-tighter block py-2 pl-3 pr-4 rounded bg-transparent md:p-0 text-gray-600 hover:text-gray-400 transition-colors', isActive && 'text-white', menuItem.class ))}
+                    >
+                      {menuItem.name}
+                    </NavLink>
+                  }
                 </li>
               ))}
             </ul>
