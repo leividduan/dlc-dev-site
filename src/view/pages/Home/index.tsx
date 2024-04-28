@@ -8,7 +8,9 @@ export function Home() {
           Entusiasta, comunicativo e apaixonado por projetos de sucesso.
         </span>
         <p className="text-gray-500 md:px-20 xl:px-48">
-          Desenvolvedor Full Stack com experiência sólida em .NET e JavaScript, estou constantemente buscando novos conhecimentos e desafios para criar soluções inovadoras que impulsionem o sucesso de projetos. Além disso, tenho a habilidade de transferência de conhecimento.
+          🌟 Olá! Sou parte da equipe de tecnologia na <a className='text-gray-50 hover:text-gray-400' href='https://weduka.com.br' target='__blank'>Weduka</a>, onde me dedico a criar soluções de software incríveis. Adoro transformar ideias em realidade, seja em desenvolvimentos de projetos ou resolvendo problemas complexos. <br/>
+
+          🚀 Tenho experiência em várias tecnologias, como .NET, JS, TS, Python, Node, SQL, e estou sempre pronto para aprender mais e compartilhar o que sei.
         </p>
         <Link to="/contact" className="p-4 bg-white rounded-lg text-black mt-10">
           Entrar em contato
