@@ -1,7 +1,15 @@
 "use client"
 
+import {
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger
+} from "@/components/ui/drawer";
 import { cn } from "@/lib/utils";
-import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
+import { GitHubLogoIcon, HamburgerMenuIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { FileUser, Youtube } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -102,8 +110,42 @@ const Icons = () => {
   );
 }
 
+const DrawerNav = () => {
+  const pathname = usePathname();
+  return (
+    <Drawer>
+      <DrawerTrigger asChild>
+        <Button variant="ghost" size='icon' className="md:hidden">
+          <HamburgerMenuIcon />
+        </Button>
+      </DrawerTrigger>
+      <DrawerContent>
+        <div className="mx-auto w-full max-w-sm overflow-auto p-6">
+          <DrawerHeader className="sr-only">
+            <DrawerTitle className="sr-only">Menus</DrawerTitle>
+            <DrawerDescription className="sr-only">Navegue entre as páginas.</DrawerDescription>
+          </DrawerHeader>
+
+          <div className="flex flex-col space-y-3">
+            {menuItems.map((item) => (
+              <Link
+                  key={item.name}
+                  className={cn("text-base", pathname === item.href ? "text-foreground font-bold" : "text-foreground/80")}
+                  href={item.href}
+                >
+                  {item.name}
+                </Link>
+            ))}
+          </div>
+        </div>
+      </DrawerContent>
+    </Drawer>
+  )
+}
+
 export {
   Container,
+  DrawerNav,
   HomeLink,
   Icons,
   Nav,

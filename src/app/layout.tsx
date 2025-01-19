@@ -38,6 +38,7 @@ export default function RootLayout({
         >
           <Header.Root>
             <Header.Container>
+              <Header.DrawerNav />
               <Header.HomeLink />
               <Header.Nav />
               <Header.Icons />
