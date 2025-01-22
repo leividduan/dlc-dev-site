@@ -34,7 +34,7 @@ interface RootProps {
 
 const Root = ({ children }: RootProps) => {
   return (
-    <header className="sticky px-10 py-2 z-50 top-0 border-grid w-full border-b bg-background/95">
+    <header className="sticky px-2 md:px-10 py-2 z-50 top-0 border-grid w-full border-b bg-background/95">
       {children}
     </header>
   );
