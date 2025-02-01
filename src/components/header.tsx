@@ -55,9 +55,11 @@ const HomeLink = () => {
 
   return (
     <>
-      <Link href={`${locale}`} className="mr-5">
+      <Link href={`/${locale}/`} className="mr-5">
+
         <span className="text-2xl font-bold tracking-tighter hidden lg:hidden 2xl:inline-block" >Deivid Luan Cardoso</span>
         <span className="text-2xl font-bold tracking-tighter hidden md:inline-block lg:inline-block 2xl:hidden">DLC</span>
+        <span className="sr-only">Deivid Luan Cardoso</span>
       </Link>
     </>
   );
@@ -129,6 +131,7 @@ const DrawerNav = () => {
       <DrawerTrigger asChild>
         <Button variant="ghost" size='icon' className="md:hidden">
           <HamburgerMenuIcon />
+          <span className="sr-only">Hamburger menu</span>
         </Button>
       </DrawerTrigger>
       <DrawerContent>
