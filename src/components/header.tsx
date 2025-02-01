@@ -86,13 +86,15 @@ const Nav = () => {
 }
 
 const Icons = () => {
+  const locale = useLocale();
+
   return (
     <div className="flex items-center gap-1 ml-auto">
       <div className='hidden md:inline-block'>
         <LocaleSwitcher />
       </div>
       <Button variant="ghost" size="icon" asChild>
-        <a href="/CV.pdf" target="_blank" rel="noopener noreferrer" download='CV_DEIVID_LUAN_CARDOSO'>
+        <a href={locale === 'pt' ? '/CV.pdf' : '/CV_EN.pdf'} target="_blank" rel="noopener noreferrer" download='CV_DEIVID_LUAN_CARDOSO'>
           <FileUser />
           <span className="sr-only">Resume</span>
         </a>
