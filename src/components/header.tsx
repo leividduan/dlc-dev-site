@@ -74,7 +74,7 @@ const Nav = () => {
        <Link
           key={item.name}
           className={cn("transition-colors hover:text-foreground", pathname === item.href ? "text-foreground font-bold" : "text-foreground/80")}
-          href={`${locale}${item.href}`}
+          href={`/${locale}${item.href}`}
         >
           {t(item.name)}
         </Link>
@@ -143,7 +143,7 @@ const DrawerNav = () => {
               <Link
                   key={item.name}
                   className={cn("text-base", pathname === item.href ? "text-foreground font-bold" : "text-foreground/80")}
-                  href={`${locale}${item.href}`}
+                  href={`/${locale}${item.href}`}
                 >
                   {t(item.name)}
                 </Link>
