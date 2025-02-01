@@ -1,0 +1,21 @@
+{
+  "Home": {
+    "title": "Enthusiastic, communicative and passionate about successful projects.",
+    "description_1": "Hello, I'm part of the technology team at",
+    "description_2": "where I dedicate myself to creating incredible software solutions. I love turning ideas into reality, whether it's developing projects or solving complex problems.",
+    "experiences": "I have experience in various technologies, such as .NET, JS, TS, Python, Node, SQL, and I'm always ready to learn more and share what I know."
+  },
+  "Contact": {
+    "title": "Would you like to talk to me?",
+    "description": "The best way to contact me is by e-mail"
+  },
+  "Menu": {
+    "home": "home",
+    "contact": "contact"
+  },
+  "Footer": "Thank you for visiting my website. The source code is available at",
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, pt {🇧🇷 Portuguese} en {🇺🇸 English} other {Unknown}}"
+  }
+}

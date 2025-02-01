@@ -1,0 +1,21 @@
+{
+  "Home": {
+    "title": "Entusiasta, comunicativo e apaixonado por projetos de sucesso.",
+    "description_1": "Olá! Faço parte da equipe de tecnologia na",
+    "description_2": "onde me dedico a criar soluções de software incríveis. Adoro transformar ideias em realidade, seja em desenvolvimentos de projetos ou resolvendo problemas complexos.",
+    "experiences": "Tenho experiência em várias tecnologias, como .NET, JS, TS, Python, Node, SQL, e estou sempre pronto para aprender mais e compartilhar o que sei."
+  },
+  "Contact": {
+    "title": "Gostaria de falar comigo?",
+    "description": "A melhor forma de contato é no e-mail"
+  },
+  "Menu": {
+    "home": "início",
+    "contact": "contato"
+  },
+  "Footer": "Obrigado por visitar meu site. O código fonte está disponível no",
+  "LocaleSwitcher": {
+    "label": "Alterar idioma",
+    "locale": "{locale, select, pt {🇧🇷 Português} en {🇺🇸 Inglês} other {Unknown}}"
+  }
+}

@@ -11,19 +11,21 @@ import {
 import { cn } from "@/lib/utils";
 import { GitHubLogoIcon, HamburgerMenuIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { FileUser, Youtube } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import LocaleSwitcher from "./locale-switcher";
 import { ToggleTheme } from "./toggle-theme";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 
 const menuItems = [
   {
-    name: 'início',
+    name: 'home',
     href: '/',
   },
   {
-    name: 'contato',
+    name: 'contact',
     href: '/contact',
   },
 ];
@@ -49,9 +51,11 @@ const Container = ({ children }: RootProps) => {
 }
 
 const HomeLink = () => {
+  const locale = useLocale();
+
   return (
     <>
-      <Link href="/" className="mr-5">
+      <Link href={`${locale}`} className="mr-5">
         <span className="text-2xl font-bold tracking-tighter hidden lg:hidden 2xl:inline-block" >Deivid Luan Cardoso</span>
         <span className="text-2xl font-bold tracking-tighter hidden md:inline-block lg:inline-block 2xl:hidden">DLC</span>
       </Link>
@@ -61,6 +65,8 @@ const HomeLink = () => {
 
 const Nav = () => {
   const pathname = usePathname();
+  const locale = useLocale();
+  const t = useTranslations('Menu');
 
   return (
     <nav className="hidden md:flex items-center gap-4 text-sm 2xl:gap-6">
@@ -68,9 +74,9 @@ const Nav = () => {
        <Link
           key={item.name}
           className={cn("transition-colors hover:text-foreground", pathname === item.href ? "text-foreground font-bold" : "text-foreground/80")}
-          href={item.href}
+          href={`${locale}${item.href}`}
         >
-          {item.name}
+          {t(item.name)}
         </Link>
       ))}
     </nav>
@@ -80,6 +86,9 @@ const Nav = () => {
 const Icons = () => {
   return (
     <div className="flex items-center gap-1 ml-auto">
+      <div className='hidden md:inline-block'>
+        <LocaleSwitcher />
+      </div>
       <Button variant="ghost" size="icon" asChild>
         <a href="/CV.pdf" target="_blank" rel="noopener noreferrer" download='CV_DEIVID_LUAN_CARDOSO'>
           <FileUser />
@@ -112,6 +121,9 @@ const Icons = () => {
 
 const DrawerNav = () => {
   const pathname = usePathname();
+  const locale = useLocale();
+  const t = useTranslations('Menu');
+
   return (
     <Drawer>
       <DrawerTrigger asChild>
@@ -131,11 +143,14 @@ const DrawerNav = () => {
               <Link
                   key={item.name}
                   className={cn("text-base", pathname === item.href ? "text-foreground font-bold" : "text-foreground/80")}
-                  href={item.href}
+                  href={`${locale}${item.href}`}
                 >
-                  {item.name}
+                  {t(item.name)}
                 </Link>
             ))}
+            <div className="md:hidden">
+              <LocaleSwitcher className="w-full" />
+            </div>
           </div>
         </div>
       </DrawerContent>
